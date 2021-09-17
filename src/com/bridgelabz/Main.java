@@ -4,20 +4,19 @@ public class Main {
 
     public static void main(String[] args) {
 
-        int sum = 0;
         Scanner sc = new Scanner(System.in);
-        System.out.print("Enter a number to check wheather the number is perfect number or not : ");
-        int num = sc.nextInt();
-        for (int i=1;i<num;i++){
-            if (num%i==0){
-                sum+=i;
+        System.out.print("Enter the last number till you want to check the Prime Number : ");
+        int endNum = sc.nextInt();
+        for (int num=1; num<=endNum; num++){
+            int temp=0;
+            for (int i=2; i<num; i++){
+                if (num%i==0){
+                    temp+=1;
+                }
             }
-        }
-        if (num==sum){
-            System.out.println(num + " is a Perfect Number");
-        }
-        else {
-            System.out.println(num + " is not a Perfect Number");
+            if (temp==0){
+                System.out.println(num);
+            }
         }
     }
 }

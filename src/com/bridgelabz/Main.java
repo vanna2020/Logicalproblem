@@ -2,21 +2,16 @@ package com.bridgelabz;
 import java.util.Scanner;
 public class Main {
 
-    public static void main(String[] args) {
-
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Enter the last number till you want to check the Prime Number : ");
-        int endNum = sc.nextInt();
-        for (int num=1; num<=endNum; num++){
-            int temp=0;
-            for (int i=2; i<num; i++){
-                if (num%i==0){
-                    temp+=1;
-                }
+        public static void main(String[] args) {
+            Scanner sc = new Scanner(System.in);
+            System.out.print("Enter a number to reverse it : ");
+            int num = sc.nextInt();
+            int rev = 0; int rem;
+            while (num!=0){
+                rem=num%10;
+                rev=rev*10+rem;
+                num=num/10;
             }
-            if (temp==0){
-                System.out.println(num);
-            }
+            System.out.print("The reversed number is : " + rev);
         }
     }
-}

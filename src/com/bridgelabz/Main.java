@@ -3,16 +3,20 @@ import java.util.Scanner;
 public class Main {
 
         public static void main(String[] args) {
-            char[] chars = "vannnnnaaaaaa13342445".toCharArray();
-            int max = 100000000;
-            int random = (int) (Math.random() * max);
-            StringBuffer sb = new StringBuffer();
+            Scanner sc = new Scanner(System.in);
 
-            while (random > 0) {
-                sb.append(chars[random % chars.length]);
-                random /= chars.length;
-            }
-            String couponCode = sb.toString();
-            System.out.println("Coupon Code: " + couponCode);
+            System.out.print("Press 1 - to start the clock : ");
+            double start = sc.nextDouble();
+            start = System.currentTimeMillis();
+            System.out.println("Start Time : " + start);
+            System.out.print("Press 0 - to stop the clock : ");
+            double stop = sc.nextDouble();
+            stop = System.currentTimeMillis();
+            System.out.println("End Time " + stop);
+
+            // Converting to seconds and displaying.
+            double elapsed_time = (stop - start) / 1000;
+            System.out.println("\nElapsed time is " + elapsed_time + "seconds");
+            sc.close();
         }
 }

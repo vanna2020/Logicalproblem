@@ -3,15 +3,16 @@ import java.util.Scanner;
 public class Main {
 
         public static void main(String[] args) {
-            Scanner sc = new Scanner(System.in);
-            System.out.print("Enter a number to reverse it : ");
-            int num = sc.nextInt();
-            int rev = 0; int rem;
-            while (num!=0){
-                rem=num%10;
-                rev=rev*10+rem;
-                num=num/10;
+            char[] chars = "vannnnnaaaaaa13342445".toCharArray();
+            int max = 100000000;
+            int random = (int) (Math.random() * max);
+            StringBuffer sb = new StringBuffer();
+
+            while (random > 0) {
+                sb.append(chars[random % chars.length]);
+                random /= chars.length;
             }
-            System.out.print("The reversed number is : " + rev);
+            String couponCode = sb.toString();
+            System.out.println("Coupon Code: " + couponCode);
         }
-    }
+}

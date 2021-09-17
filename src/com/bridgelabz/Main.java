@@ -4,20 +4,20 @@ public class Main {
 
     public static void main(String[] args) {
 
+        int sum = 0;
         Scanner sc = new Scanner(System.in);
-        System.out.print("Enter how many times you want to print the Fibonacci_Series : ");
-        int times = sc.nextInt();
-        int a = 0;
-        int b = 1;
-        System.out.print(a + " " + b);
-        int c;
-        for (int i = 1; i <= times; i++) {
-            c = a + b;
-            System.out.print(" " + c);
-            a = b;
-            b = c;
+        System.out.print("Enter a number to check wheather the number is perfect number or not : ");
+        int num = sc.nextInt();
+        for (int i=1;i<num;i++){
+            if (num%i==0){
+                sum+=i;
+            }
+        }
+        if (num==sum){
+            System.out.println(num + " is a Perfect Number");
+        }
+        else {
+            System.out.println(num + " is not a Perfect Number");
         }
     }
-
 }
-
